@@ -1,0 +1,9 @@
+*.json
+*.a
+*.o
+*.so
+*.pcm
+*.gcm
+
+build*/
+out*/
