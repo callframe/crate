@@ -1,1 +1,11 @@
+module;
+
+#include <stdint.h>
+
 export module crate;
+
+export namespace crate {
+#include "crate/platform.cc"
+// depends on platform.cc being first
+#include "crate/defines.cc"
+};  // namespace crate
