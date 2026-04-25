@@ -1,3 +1,12 @@
+module;
+#include <stdint.h>
+
+#include "crate/platform.h"
+
+export module crate:defines;
+
+export namespace crate {
+
 using u8 = uint8_t;
 using u16 = uint16_t;
 using u32 = uint32_t;
@@ -17,3 +26,5 @@ using isize = i32;
 #else
 #error "target cpu is not supported"
 #endif
+
+};  // namespace crate

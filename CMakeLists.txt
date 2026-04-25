@@ -14,6 +14,7 @@ project(${crate}
 )
 
 set(crate_DIR "${crate_TOPDIR}/crate")
+set(crate_MEMORY_DIR "${crate_DIR}/memory")
 
 # configure crate library
 add_library(${crate})
@@ -22,7 +23,9 @@ target_include_directories(${crate} PRIVATE ${crate_TOPDIR})
 target_sources(${crate} PUBLIC
   FILE_SET CXX_MODULES
   FILES
-    "${crate_DIR}/crate.ccm"
+    "${crate_DIR}/crate.cc"
+    "${crate_DIR}/defines.cc"
+    "${crate_MEMORY_DIR}/allocator.cc"
 )
 
 target_compile_features(${crate} PUBLIC cxx_std_20)
@@ -30,6 +33,5 @@ target_compile_options(${crate}
   PRIVATE
     -Wall -Werror
   PUBLIC
-    -fno-rtti
+    -fno-rtti -fno-exceptions
 )
-
